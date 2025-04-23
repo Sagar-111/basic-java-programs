@@ -1,6 +1,6 @@
 package ch.b_Operators;
 
-public class ArithmaticOperator {
+public class ArithmeticOperatorT {
 
 	public static void main(String[] args) {
 
