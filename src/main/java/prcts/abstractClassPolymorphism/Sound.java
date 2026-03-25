@@ -9,6 +9,7 @@ public class Sound {
 		
 		for (Animal o:ob) {
 			o.makeSound();
+			o.poop();
 		}
 		
 	}
