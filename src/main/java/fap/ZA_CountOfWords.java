@@ -8,7 +8,7 @@ public class ZA_CountOfWords {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Enter the line to conunt words in it");
+		System.out.println("Enter the line to count words in it");
 
 		String str1 = sc.nextLine();
 
