@@ -6,36 +6,32 @@ public class ZJ_IQBloomSC {
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Please enter string here................");
 
-		try {
-			System.out.println("Please enter string here................");
+            String str = sc.nextLine();
 
-			String str = sc.nextLine();
+            int length = str.length();
 
-			int length = str.length();
+            String vowels = "AEIOUaeiou";
 
-			String vowels = "AEIOUaeiou";
+            String replacedString = "";
 
-			String replacedString = "";
+            for (int i = 0; i < vowels.length(); i++) {
+                char charAt = vowels.charAt(i);
+                String ch = String.valueOf(charAt);// char---->String.
+                if (str.contains(ch)) {
+                    replacedString = str.replace(ch, "");
+                    str = replacedString;
+                }
+            }
 
-			for (int i = 0; i < vowels.length(); i++) {
-				char charAt = vowels.charAt(i);
-				String ch = String.valueOf(charAt);// char---->String.
-				if (str.contains(ch)) {
-					replacedString = str.replace(ch, "");
-					str = replacedString;
-				}
-			}
+            int length2 = replacedString.length();
 
-			int length2 = replacedString.length();
+            System.out.println(replacedString);
 
-			System.out.println(replacedString);
-
-			System.out.println(length - length2);
-		} finally {
-			sc.close();
-		}
+            System.out.println(length - length2);
+        }
 	}
 
 }

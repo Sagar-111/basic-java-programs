@@ -1,34 +1,33 @@
 package fap;
 
-public class ZK_AnagramChecker {
+import java.util.*;
 
+public class ZK_AnagramChecker{
 	public static void main(String[] args) {
+		String strOne = "Sager";
+		String strTwo = "ragas";
 
-		boolean status = checkAnagram("raynaan", "narayan");
-
-		System.out.println(status);
-
+		System.out.println("The given Strings are anagram? : "+checkAnagram2(strOne.toLowerCase(), strTwo.toLowerCase()));
 	}
 
-	private static boolean checkAnagram(String string, String string1) {
-		String str1 = string.toLowerCase();
-		String str2 = string1.toLowerCase();
+	private static boolean checkAnagram2(String strOne, String strTwo) {
+		if(strTwo.length()!=strOne.length()) return false;
 
-		boolean flag = false;
-		if (str1.length() != str2.length()) {
-			return flag;
-		} else {
-			for (int i = 0; i < str1.length(); i++) {
-				String ch = String.valueOf(str1.charAt(i));
-				if (str2.contains(ch) == true) {
-					flag = true;
-				} else {
-					flag = false;
-					break;
-				}
-			}
-			return flag;
-		}
+		Map<Character, Integer> map = new HashMap<>();
 
+		for(char c:strOne.toCharArray()) map.merge(c, 1, Integer::sum);
+
+		return true;
+	}
+
+	private static boolean checkAnagram(String strOne, String strTwo) {
+		int[] arr = new int[26];
+
+		if(strTwo.length()!=strOne.length()) return false;
+
+		for(char c:strOne.toCharArray()) arr[c-'a']++;
+		for(char c:strTwo.toCharArray()) arr[c-'a']--;
+		for(int i:arr) if(arr[i]!=0) return false;
+		return true;
 	}
 }
