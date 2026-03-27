@@ -7,7 +7,6 @@ Some tests passed, some failed with specific error codes, and some were skipped.
 
 The Task: Write a method that takes this List<String> and returns a Map<String, Integer> showing the count of each result.*/
 
-
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -16,13 +15,10 @@ public class CountOfTestResult {
     public static void main(String[] args) {
         List<String> testResultFromCI = Arrays.asList("PASS", "FAIL_404", "PASS", "SKIP", "FAIL_500", "PASS", "FAIL_404");
 
-//      Without Using .getOrDefault(Object, V) method
         System.out.println(countErrorType1(testResultFromCI));
 
-//        Using .getOrDefaultMethod.
         System.out.println(countErrorType2(testResultFromCI));
 
-//        using Stream API
         System.out.println(countErrorType3(testResultFromCI));
 
     }

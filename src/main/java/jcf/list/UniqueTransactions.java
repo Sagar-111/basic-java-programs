@@ -15,7 +15,6 @@ public class UniqueTransactions {
         System.out.print(listUniqueIds(transactionIds));
     }
 
-    //<T> makes the method generic and can be used for any kind of Data type that is being passed to it.
     private static <T> Set<T> listUniqueIds(List<T> rawList){
         return new LinkedHashSet<>(rawList);
     }

@@ -17,11 +17,17 @@ Output: Second largest = 34
  */
 public class SecondLargest {
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(12, 35, 35, 1, 10, 34, 1); //Unmodifiable
 
-//        List<Integer> numbers = new ArrayList<>(Arrays.asList(12, 35, 1, 10, 34, 1)); //The ArrayList Can be modified.
+        List<Integer> numbers = new ArrayList<>(Arrays.asList(12, 35, 1, 10, 34, 1));
 
-//        Integer max = findMax(numbers);
+        method2(numbers);
+
+        method1(numbers);
+
+    }
+
+    private static void method2(List<Integer> numbers) {
+
         Integer max = Integer.MIN_VALUE;
 
         Integer secondMax = Integer.MIN_VALUE;
@@ -40,12 +46,9 @@ public class SecondLargest {
         } else {
             System.out.println(secondMax);
         }
-//        Second Method
-        method(numbers);
-
     }
 
-    public static void method(List<Integer> list) {
+    public static void method1(List<Integer> list) {
 
         list.sort(Collections.reverseOrder());
 
